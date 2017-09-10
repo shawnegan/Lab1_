@@ -2,9 +2,9 @@ package pkgTest;
 
 import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import pkgCore.Die;
 import pkgCore.Roll;
 
 public class RollTest {
@@ -13,8 +13,12 @@ public class RollTest {
 	public void TestRoll() {
 
 		for (int a = 0; a < 10000; a++) {
+
+			// Make sure value of roll is between 1 and 12.
+
 			Roll r = new Roll();
-			// TODO: Make sure value of roll is between 1 and 12.
+			boolean RollCheck = r.getScore() >= 2 && r.getScore() <= 12;
+			Assert.assertTrue(RollCheck);
 		}
 
 	}
